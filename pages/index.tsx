@@ -17,7 +17,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-
+        <div>
+          <h1 className='h-screen flex flex-col justify-center items-center text-6xl text-white'>ChirpUp</h1>
+        </div>
       </main>
     </>
   )

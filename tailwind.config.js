@@ -6,10 +6,13 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    fontFamily: {
-      roboto: ["Roboto", "sans-serif"],
+    
+    extend: {
+      fontFamily: {
+        roboto: ["Roboto", "sans-serif"],
+        lobster: ["Lobster", "cursive"],
+      },
     },
-    extend: {},
   },
   plugins: [],
 }

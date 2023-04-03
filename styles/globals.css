@@ -3,3 +3,12 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+:root {
+  @apply h-full bg-black
+}
+
+body {
+  @apply h-full bg-black
+}
