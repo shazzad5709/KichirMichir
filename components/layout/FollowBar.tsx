@@ -1,9 +1,9 @@
-import useUsers from '../../hooks/useUser';
+import useUsers from '../../hooks/useUsers';
 
 import Avatar from '../Avatar';
 
 const FollowBar = () => {
-  const { data: users = [] } = useUsers("123");
+  const { data: users = [] } = useUsers();
 
   if (users.length === 0) {
     return null;
