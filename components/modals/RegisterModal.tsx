@@ -7,6 +7,8 @@ import useRegisterModal from "../../hooks/useRegisterModal";
 
 import Input from "../Input";
 import Modal from "../Modal";
+import { toNamespacedPath } from "node:path/win32";
+import toast from "react-hot-toast";
 
 const RegisterModal = () => {
   const loginModal = useLoginModal();
@@ -39,18 +41,16 @@ const RegisterModal = () => {
         name,
       });
 
-      setIsLoading(false)
-
-      console.log('Account created.');
+      toast.success('Account created successfully!');
 
       signIn('credentials', {
-        email,
-        password,
+        email, password
       });
-
+      
       registerModal.onClose();
     } catch (error) {
-      console.log('Something went wrong');
+      toast.error('Something went wrong');
+      console.log(error);
     } finally {
       setIsLoading(false);
     }
