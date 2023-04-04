@@ -13,33 +13,27 @@ interface ModalProps {
   disabled?: boolean;
 }
 
-const Modal: React.FC<ModalProps> = ({
-    isOpen,
-    onClose,
-    onSubmit,
-    title,
-    body,
-    actionLabel,
-    footer,
-    disabled
-}) => {
+const Modal: React.FC<ModalProps> = ({ isOpen, onClose, onSubmit, title, body, actionLabel, footer, disabled }) => {
   const handleClose = useCallback(() => {
     if (disabled) {
       return;
     }
+  
     onClose();
-  }, [disabled,onClose]);
+  }, [onClose, disabled]);
 
   const handleSubmit = useCallback(() => {
     if (disabled) {
       return;
     }
+
     onSubmit();
-  }, [disabled,onSubmit]);
+  }, [onSubmit, disabled]);
 
   if (!isOpen) {
     return null;
   }
+
   return (
     <>
       <div
@@ -58,19 +52,9 @@ const Modal: React.FC<ModalProps> = ({
           bg-opacity-70
         "
       >
-        <div
-        className="
-        relative
-        w-full
-        lg:w-3/6
-        my-6
-        mx-auto
-        lg:max-w-3xl
-        h-full
-        lg:h-auto">
+        <div className="relative w-full lg:w-3/6 my-6 mx-auto lg:max-w-3xl h-full lg:h-auto">
           {/*content*/}
-          <div
-          className="
+          <div className="
             h-full
             lg:h-auto
             border-0 
@@ -86,8 +70,7 @@ const Modal: React.FC<ModalProps> = ({
             "
           >
             {/*header*/}
-            <div
-            className="
+            <div className="
               flex 
               items-center 
               justify-between 
@@ -95,11 +78,7 @@ const Modal: React.FC<ModalProps> = ({
               rounded-t
               "
             >
-              <h3 
-              className="
-              text-3xl
-              font-semibold
-              text-white">
+              <h3 className="text-3xl font-semibold text-white">
                 {title}
               </h3>
               <button
@@ -117,20 +96,11 @@ const Modal: React.FC<ModalProps> = ({
               </button>
             </div>
             {/*body*/}
-            <div
-            className="
-            relative
-            p-10
-            flex-auto">
+            <div className="relative p-10 flex-auto">
               {body}
             </div>
             {/*footer*/}
-            <div 
-            className="
-            flex
-            flex-col
-            gap-2
-            p-10">
+            <div className="flex flex-col gap-2 p-10">
               <Button disabled={disabled} label={actionLabel} secondary fullWidth large onClick={handleSubmit} />
               {footer}
             </div>

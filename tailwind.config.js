@@ -6,14 +6,7 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    
-    extend: {
-      fontFamily: {
-        roboto: ["Roboto", "sans-serif"],
-        lobster: ["Lobster", "cursive"],
-      },
-    },
+    extend: {},
   },
   plugins: [],
 }
-
