@@ -13,7 +13,7 @@ import ImageUpload from "../ImageUpload";
 const EditModal = () => {
   const { data: currentUser } = useCurrentUser();
   const { mutate: mutateFetchedUser } = useUser(currentUser?.id);
-  const editModal = useEditModal();
+  const editModal = useEditModal();  
 
   const [profileImage, setProfileImage] = useState('');
   const [coverImage, setCoverImage] = useState('');
@@ -34,7 +34,8 @@ const EditModal = () => {
   const onSubmit = useCallback(async () => {
     try {
       setIsLoading(true);
-
+      
+      
       await axios.patch('/api/edit', { name, username, bio, profileImage, coverImage });
       mutateFetchedUser();
 
@@ -42,6 +43,7 @@ const EditModal = () => {
 
       editModal.onClose();
     } catch (error) {
+      console.log(error);
       toast.error('Something went wrong');
     } finally {
       setIsLoading(false);

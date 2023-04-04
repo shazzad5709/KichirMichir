@@ -1,5 +1,4 @@
 import { NextApiRequest, NextApiResponse } from "next";
-
 import serverAuth from "../../libs/serverAuth";
 import prisma from "../../libs/prismadb";
 
@@ -32,7 +31,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     return res.status(200).json(updatedUser);
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     return res.status(400).end();
   }
 }

@@ -29,26 +29,25 @@ export default NextAuth({
         if(!isCorrectPassword)
           throw new Error('Invalid credentials')
 
+        user.hashedPassword=''
         return user
       }
     })
   ],
   debug: process.env.NODE_ENV === 'development',
-  session: {
-    strategy: 'jwt',
-  },
+  session: { strategy: "jwt" },
   jwt: {
     secret: process.env.NEXTAUTH_JWT_SECRET,
   },
   secret: process.env.NEXTAUTH_SECRET,
-  // callbacks: {
-  //   async jwt({ token, user }) {
-  //       return { ...token, ...user };
-  //   },
-  //   async session({ session, token, user }) {
-  //       // Send properties to the client, like an access_token from a provider.
-  //       session.user = token;
-  //       return session;
-  //   },
-  // },
+  callbacks: {
+    async jwt({ token, user }) {
+        return { ...token, ...user };
+    },
+    async session({ session, token, user }) {
+        // Send properties to the client, like an access_token from a provider.
+        session.user = token;
+        return session;
+    },
+  },
 })
