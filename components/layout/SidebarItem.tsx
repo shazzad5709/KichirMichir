@@ -58,7 +58,10 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ label, icon: Icon, href, auth
         lg:flex 
         items-row 
         gap-4 
-        p-4 
+        w-full 
+        px-4
+        my-2
+        py-2 
         rounded-full 
         hover:bg-slate-300 
         hover:bg-opacity-10 

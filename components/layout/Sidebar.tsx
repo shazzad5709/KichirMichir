@@ -7,7 +7,7 @@ import useCurrentUser from '@/hooks/useCurrentUser';
 
 import SidebarItem from './SidebarItem';
 import SidebarLogo from './SidebarLogo';
-import SidebarTweetButton from './SidebarTweetButton';
+import SidebarTweetButton from './SidebarChirpButton';
 
 const Sidebar = () => {
   const { data: currentUser } = useCurrentUser();
