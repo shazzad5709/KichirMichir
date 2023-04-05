@@ -42,7 +42,7 @@ const RegisterModal = () => {
 
       setIsLoading(false)
 
-      toast.success('Account created.');
+      toast.success('সদস্যপদ তৈরি ');
 
       signIn('credentials', {
         email,
@@ -51,7 +51,7 @@ const RegisterModal = () => {
 
       registerModal.onClose();
     } catch (error) {
-      toast.error('Something went wrong');
+      toast.error('কিছু তো সমস্যা আছে');
     } finally {
       setIsLoading(false);
     }
@@ -89,7 +89,7 @@ const RegisterModal = () => {
 
   const footerContent = (
     <div className="text-neutral-400 text-center mt-4">
-      <p>Already have an account?
+      <p>ইতিমধ্যে একটি সদস্যপদ আছে?
         <span 
           onClick={onToggle} 
           className="
@@ -97,7 +97,7 @@ const RegisterModal = () => {
             cursor-pointer 
             hover:underline
           "
-          > Sign in</span>
+          > সাইন ইন করুন</span>
       </p>
     </div>
   )

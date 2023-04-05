@@ -36,12 +36,12 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
 
       await axios.post(url, { body });
 
-      toast.success('Tweet created');
+      toast.success('বকবক তৈরী');
       setBody('');
       mutatePosts();
       mutatePost();
     } catch (error) {
-      toast.error('Something went wrong');
+      toast.error('কিছু তো সমস্যা আছে');
     } finally {
       setIsLoading(false);
     }
@@ -90,7 +90,7 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
         </div>
       ) : (
         <div className="py-8">
-          <h1 className="text-white text-2xl text-center mb-4 font-bold">Welcome to ChirpUp</h1>
+          <h1 className="text-white text-2xl text-center mb-4 font-bold">কিচিরমিচিরে স্বাগতম</h1>
           <div className="flex flex-row items-center justify-center gap-4">
             <Button label="Login" onClick={loginModal.onOpen} />
             <Button label="Register" onClick={registerModal.onOpen} secondary />

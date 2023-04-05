@@ -57,7 +57,7 @@ const SidebarChirpButton = () => {
             text-white 
             text-[20px]
         ">
-          Chirp
+          বকবক
         </p>
       </div>
     </div>

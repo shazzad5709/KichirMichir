@@ -38,11 +38,11 @@ const EditModal = () => {
       await axios.patch('/api/edit', { name, username, bio, profileImage, coverImage });
       mutateFetchedUser();
 
-      toast.success('Updated');
+      toast.success('কাজ সম্পন্ন');
 
       editModal.onClose();
     } catch (error) {
-      toast.error('Something went wrong');
+      toast.error('কিছু তো সমস্যা আছে');
     } finally {
       setIsLoading(false);
     }

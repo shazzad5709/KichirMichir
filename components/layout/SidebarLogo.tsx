@@ -52,7 +52,7 @@ const SidebarLogo = () => {
             text-emerald-400 
           '
         >
-          ChirpUp
+          কিচিরমিচির
         </p>
       </div>
     </div>

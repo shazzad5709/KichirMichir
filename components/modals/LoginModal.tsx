@@ -25,11 +25,11 @@ const LoginModal = () => {
         password,
       });
 
-      toast.success('Logged in');
+      toast.success('প্রবেশ প্রক্রিয়া সম্পন্ন');
 
       loginModal.onClose();
     } catch (error) {
-      toast.error('Something went wrong');
+      toast.error('কিছু তো সমস্যা আছে');
     } finally {
       setIsLoading(false);
     }
@@ -60,7 +60,7 @@ const LoginModal = () => {
 
   const footerContent = (
     <div className="text-neutral-400 text-center mt-4">
-      <p>First time using Twitter?
+      <p>কিচিরমিচিরে প্রথমবার?
         <span 
           onClick={onToggle} 
           className="
@@ -68,7 +68,7 @@ const LoginModal = () => {
             cursor-pointer 
             hover:underline
           "
-          > Create an account</span>
+          > অ্যাকাউন্ট তৈরি করুন </span>
       </p>
     </div>
   )
