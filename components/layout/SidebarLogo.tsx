@@ -49,8 +49,7 @@ const SidebarLogo = () => {
             text-center
             text-2xl
             font-bold
-            font-poppins
-            text-emerald-500 
+            text-emerald-400 
           '
         >
           ChirpUp
