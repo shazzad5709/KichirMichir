@@ -6,9 +6,11 @@ import Avatar from '../Avatar';
 
 interface CommentItemProps {
   data: Record<string, any>;
+  onDelete: () => void;
+  userId: string;
 }
 
-const CommentItem: React.FC<CommentItemProps> = ({ data = {} }) => {
+const CommentItem: React.FC<CommentItemProps> = ({ data = {}, onDelete, userId }) => {
   const router = useRouter();
 
   const goToUser = useCallback((ev: any) => {
@@ -24,6 +26,31 @@ const CommentItem: React.FC<CommentItemProps> = ({ data = {} }) => {
 
     return formatDistanceToNowStrict(new Date(data.createdAt));
   }, [data.createdAt])
+
+  const handleDelete = useCallback(async () => {
+    console.log("hi");
+    try {
+      console.log("hi2");
+      const res = await fetch(`/api/comments/${data.user.postId}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      console.log("hi3");
+      if (res.status === 204) {
+        onDelete();
+      } else {
+        console.error('Failed to delete comment:', res.status);
+      }
+    } catch (error) {
+      console.error('Failed to delete comment:', error);
+    }
+  }, [data.user.postId, onDelete]);
+
+  const canDeleteComment = useMemo(() => {
+    return data.userId === userId || data.postId.userId === userId;
+  }, [data, userId]);
 
   return (
     <div 
@@ -63,6 +90,18 @@ const CommentItem: React.FC<CommentItemProps> = ({ data = {} }) => {
             <span className="text-neutral-500 text-sm">
               {createdAt}
             </span>
+            {canDeleteComment && (
+              <button 
+                onClick={handleDelete} 
+                className="
+                  ml-auto
+                  text-neutral-500 
+                  hover:text-white 
+                  transition
+                ">
+                Delete
+              </button>
+            )}
           </div>
           <div className="text-white mt-1">
             {data.body}

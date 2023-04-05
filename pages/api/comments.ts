@@ -4,6 +4,27 @@ import serverAuth from "@/libs/serverAuth";
 import prisma from "@/libs/prismadb";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  if (req.method === 'DELETE') {
+    try {
+      const { currentUser } = await serverAuth(req);
+      const { id } = req.query;
+
+      if (!id || typeof id !== 'string') {
+        throw new Error('Invalid ID');
+      }
+
+      const comment = await prisma.comment.delete({
+        where: {
+          id
+        }
+      });
+
+      return res.status(204).end();
+    } catch (error) {
+      console.log(error);
+      return res.status(400).end();
+    }
+  }
   if (req.method !== 'POST') {
     return res.status(405).end();
   }
