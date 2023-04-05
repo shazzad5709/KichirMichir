@@ -1,4 +1,4 @@
-# Build: ChirpUp with React, Tailwind, Next, Prisma, Mongo & NextAuth
+# ChirpUp
 
 ChirpUp is a FullStack Twitter clone made using React, NextJS, TailwindCSS, MongoDB & Prisma.
 
