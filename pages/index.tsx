@@ -9,7 +9,7 @@ export const config ={
 export default function Home() {
   return (
     <>
-      <Header label="Home" />
+      <Header label="আস্তানা" />
       <Form placeholder="জীবনে কি ঘটছে?" />
       <PostFeed />
     </>

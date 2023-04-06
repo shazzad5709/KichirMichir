@@ -15,19 +15,19 @@ const Sidebar = () => {
   const items = [
     {
       icon: BsHouseFill,
-      label: 'Home',
+      label: 'আস্তানা',
       href: '/',
     },
     {
       icon: BsBellFill,
-      label: 'Notifications',
+      label: 'কি কি ঘটছে',
       href: '/notifications',
       auth: true,
       alert: currentUser?.hasNotification
     },
     {
       icon: FaUser,
-      label: 'Profile',
+      label: 'বিবরণ',
       href: `/users/${currentUser?.id}`,
       auth: true,
     },
@@ -48,7 +48,7 @@ const Sidebar = () => {
                 label={item.label}
               />
             ))}
-            {currentUser && <SidebarItem onClick={() => signOut()} icon={BiLogOut} label="Logout" />}
+            {currentUser && <SidebarItem onClick={() => signOut()} icon={BiLogOut} label="বের হয়ে যান" />}
             <SidebarTweetButton />
           </div>
         </div>
