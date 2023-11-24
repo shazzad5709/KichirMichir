@@ -27,9 +27,9 @@ const useFollow = (userId: string) => {
       let request;
 
       if (isFollowing) {
-        request = () => axios.delete('/api/follow', { data: { userId } });
+        request = () => axios.delete('http://localhost:3000/api/follow', { data: { userId } });
       } else {
-        request = () => axios.post('/api/follow', { userId });
+        request = () => axios.post('http://localhost:3000/api/follow', { userId });
       }
 
       await request();

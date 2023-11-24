@@ -15,7 +15,7 @@ const SidebarChirpButton = () => {
       return loginModal.onOpen();
     }
 
-    router.push('/');
+    router.push('http://localhost:3000/');
   }, [loginModal, router, currentUser]);
 
   return (

@@ -22,11 +22,11 @@ const PostItem: React.FC<PostItemProps> = ({ data = {}, userId }) => {
 
   const goToUser = useCallback((ev: any) => {
     ev.stopPropagation();
-    router.push(`/users/${data.user.id}`)
+    router.push(`http://localhost:3000/users/${data.user.id}`)
   }, [router, data.user.id]);
 
   const goToPost = useCallback(() => {
-    router.push(`/posts/${data.id}`);
+    router.push(`http://localhost:3000/posts/${data.id}`);
   }, [router, data.id]);
 
   const onLike = useCallback(async (ev: any) => {

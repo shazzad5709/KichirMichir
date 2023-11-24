@@ -14,7 +14,7 @@ const CommentItem: React.FC<CommentItemProps> = ({ data = {} }) => {
   const goToUser = useCallback((ev: any) => {
     ev.stopPropagation();
 
-    router.push(`/users/${data.user.id}`)
+    router.push(`http://localhost:3000/users/${data.user.id}`)
   }, [router, data.user.id]);
 
   const createdAt = useMemo(() => {

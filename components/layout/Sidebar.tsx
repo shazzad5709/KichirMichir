@@ -16,19 +16,19 @@ const Sidebar = () => {
     {
       icon: BsHouseFill,
       label: 'আস্তানা',
-      href: '/',
+      href: 'http://localhost:3000/',
     },
     {
       icon: BsBellFill,
       label: 'কি কি ঘটছে',
-      href: '/notifications',
+      href: 'http://localhost:3000/notifications',
       auth: true,
       alert: currentUser?.hasNotification
     },
     {
       icon: FaUser,
       label: 'বিবরণ',
-      href: `/users/${currentUser?.id}`,
+      href: `http://localhost:3000/users/${currentUser?.id}`,
       auth: true,
     },
   ]

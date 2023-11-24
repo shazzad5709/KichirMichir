@@ -33,7 +33,7 @@ const RegisterModal = () => {
     try {
       setIsLoading(true);
       
-      await axios.post('/api/register', {
+      await axios.post('http://localhost:3000/api/register', {
         email,
         password,
         username,

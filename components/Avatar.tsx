@@ -18,7 +18,7 @@ const Avatar: React.FC<AvatarProps> = ({ userId, isLarge, hasBorder }) => {
   const onClick = useCallback((event: any) => {
     event.stopPropagation();
 
-    const url = `/users/${userId}`;
+    const url = `http://localhost:3000/users/${userId}`;
 
     router.push(url);
   }, [router, userId]);

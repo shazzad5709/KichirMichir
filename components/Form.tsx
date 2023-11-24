@@ -32,7 +32,7 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
     try {
       setIsLoading(true);
 
-      const url = isComment ? `/api/comments?postId=${postId}` : '/api/posts';
+      const url = isComment ? `http://localhost:3000/api/comments?postId=${postId}` : 'http://localhost:3000/api/posts';
 
       await axios.post(url, { body });
 

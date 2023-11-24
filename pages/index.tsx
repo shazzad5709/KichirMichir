@@ -3,7 +3,7 @@ import Header from "@/components/Header"
 import Form from "@/components/Form"
 
 export const config ={
-  unstable_runtimeJS:false
+  unstable_runtimeJS:true
 }
 
 export default function Home() {

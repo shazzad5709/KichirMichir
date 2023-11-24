@@ -5,7 +5,7 @@ const SidebarLogo = () => {
   const router = useRouter();
 
   return (
-    <div className='flex' onClick={() => router.push('/')}>
+    <div className='flex' onClick={() => router.push('http://localhost:3000/')}>
       <div
         className='
         rounded-full

@@ -10,7 +10,7 @@ export async function getServerSideProps(context: NextPageContext) {
   if (!session) {
     return {
       redirect: {
-        destination: '/',
+        destination: 'http://localhost:3000/',
         permanent: false,
       }
     }

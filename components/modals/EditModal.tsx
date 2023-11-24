@@ -35,7 +35,7 @@ const EditModal = () => {
     try {
       setIsLoading(true);
 
-      await axios.patch('/api/edit', { name, username, bio, profileImage, coverImage });
+      await axios.patch('http://localhost:3000/api/edit', { name, username, bio, profileImage, coverImage });
       mutateFetchedUser();
 
       toast.success('কাজ সম্পন্ন');
